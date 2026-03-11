@@ -155,12 +155,20 @@ const RegisterCard = () => {
             onChange={handleInputChange} 
             error={errors.name}
           />
-          <FormInput 
+          {/* <FormInput 
             label="Employee ID (0 if none)" 
             name="employeeId" 
             placeholder="EMP12345 or 0" 
             value={formData.employeeId} 
             onChange={handleInputChange} 
+            error={errors.employeeId}
+          /> */}
+          <FormInput
+            label="Employee ID (DOB e.g., 04102003 if none)"
+            name="employeeId"
+            placeholder="EMP12345 or DOB: 04102003"
+            value={formData.employeeId}
+            onChange={handleInputChange}
             error={errors.employeeId}
           />
           <FormInput 
