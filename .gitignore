@@ -1,0 +1,106 @@
+# ----------------------------
+
+# Python
+
+# ----------------------------
+
+**pycache**/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+
+venv/
+env/
+ENV/
+.venv/
+
+# Python build files
+
+build/
+dist/
+.eggs/
+*.egg-info/
+
+# ----------------------------
+
+# Environment variables
+
+# ----------------------------
+
+.env
+.env.*
+*.env
+
+# ----------------------------
+
+# Logs
+
+# ----------------------------
+
+*.log
+
+# ----------------------------
+
+# OS files
+
+# ----------------------------
+
+.DS_Store
+Thumbs.db
+
+# ----------------------------
+
+# Uploads (user images)
+
+# ----------------------------
+
+uploads/
+*.jpg
+*.jpeg
+*.png
+
+# ----------------------------
+
+# Node / React
+
+# ----------------------------
+
+node_modules/
+frontend/node_modules/
+
+# React build
+
+frontend/dist/
+frontend/build/
+
+# Vite cache
+
+node_modules/.vite
+
+# ----------------------------
+
+# IDE
+
+# ----------------------------
+
+.vscode/
+.idea/
+
+# ----------------------------
+
+# Testing / coverage
+
+# ----------------------------
+
+.coverage
+htmlcov/
+
+# ----------------------------
+
+# Railway
+
+# ----------------------------
+
+.railway
