@@ -51,13 +51,13 @@ async def register_employee(
             detail="File size exceeds the 5MB limit."
         )
     
-    # Check if employee_id already exists before saving the file
-    existing_employee = db.query(Employee).filter(Employee.employee_id == employee_id).first()
-    if existing_employee:
-         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="An employee with this ID already exists."
-        )
+    # # Check if employee_id already exists before saving the file
+    # existing_employee = db.query(Employee).filter(Employee.employee_id == employee_id).first()
+    # if existing_employee:
+    #      raise HTTPException(
+    #         status_code=status.HTTP_400_BAD_REQUEST,
+    #         detail="An employee with this ID already exists."
+    #     )
 
     # 3. Save file securely
     file_extension = os.path.splitext(image.filename)[1]
