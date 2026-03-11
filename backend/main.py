@@ -1,7 +1,7 @@
 import os
 import shutil
 import uuid
-from fastapi import FastAPI, UploadFile, Form, Depends, HTTPException, status
+from fastapi import FastAPI, UploadFile, Form, Depends, HTTPException, status, File
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
@@ -33,7 +33,7 @@ async def register_employee(
     name: str = Form(...),
     employee_id: str = Form(...),
     mobile: str = Form(...),
-    image: UploadFile = Form(...),
+    image: UploadFile = File(...),
     db: Session = Depends(get_db)
 ):
     # 1. Validate file type
