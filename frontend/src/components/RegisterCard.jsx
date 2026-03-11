@@ -76,7 +76,7 @@ const RegisterCard = () => {
       // or configured via an environment variable. We'll use the absolute URL for Railway/local backend interoperability
       // assuming the frontend app gets the API URL from Vite env, fallback to relative
       //const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
-      const apiUrl = https://web-production-9f2a3.up.railway.app/
+      const apiUrl = 'https://web-production-9f2a3.up.railway.app/';
       const response = await fetch(`${apiUrl}/register`, {
         method: 'POST',
         body: submitData,
