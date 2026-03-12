@@ -12,6 +12,7 @@ from .models import Employee
 
 Base.metadata.create_all(bind=engine)
 
+
 app = FastAPI(title="Employee Face Registration API")
 
 
@@ -51,6 +52,7 @@ async def register_employee(
             detail="Only JPG, JPEG and PNG allowed"
         )
 
+
     file_content = await image.read()
 
     if len(file_content) > MAX_FILE_SIZE:
@@ -60,7 +62,9 @@ async def register_employee(
         )
 
 
-    existing_employee = db.query(Employee).filter(Employee.employee_id == employee_id).first()
+    existing_employee = db.query(Employee).filter(
+        Employee.employee_id == employee_id
+    ).first()
 
     if existing_employee:
         raise HTTPException(
@@ -105,8 +109,26 @@ async def register_employee(
             detail="Employee ID already registered"
         )
 
+
     return {
         "success": True,
         "employee_id": employee.employee_id,
         "image_url": image_url
     }
+
+
+@app.get("/employees")
+def get_employees(db: Session = Depends(get_db)):
+
+    employees = db.query(Employee).all()
+
+    return [
+        {
+            "name": emp.name,
+            "employee_id": emp.employee_id,
+            "mobile": emp.mobile,
+            "image": emp.image_path,
+            "created_at": emp.created_at
+        }
+        for emp in employees
+    ]
